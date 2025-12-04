@@ -13,11 +13,12 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  @Column({ unique: true })
+  @Column({ unique: true, nullable: true })
   phone: string;
 
-  @Column()
-  password: string; // hashed
+  @Column({ default: '12345678' })
+  password: string;
+
 
   @Column({ type: 'varchar', default: 'user' })
   role: UserRole;
